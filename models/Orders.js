@@ -16,7 +16,8 @@ var orders = new Schema({
       },
          recipe: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Recipe'
+            ref: 'Recipe',
+            required: true
       }
    } 
 ],

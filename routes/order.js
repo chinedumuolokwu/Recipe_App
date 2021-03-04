@@ -1,8 +1,8 @@
-// const express = require('express');
+const express = require('express');
 
-// const orderController = require('../Controllers/orderController');
+const orderController = require('../Controllers/orderController');
 
-// const router = express.Router();
+const router = express.Router();
 
 // router.get('/', orderController.getOrder);
 

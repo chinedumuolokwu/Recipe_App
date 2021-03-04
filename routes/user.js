@@ -9,6 +9,10 @@ router.get('/', userController.getusers);
 
 router.get('/:user_id', userController.getuser);
 
+router.put('/:user_id', userController.updateuser);
+
+router.delete('/:user_id', userController.deleteuser);
+
 // router.get('/', [], userService.exist);
 
 // router.post('/', [body('email').isEmail()], userService.signUp);
