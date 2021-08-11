@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const user = require('./routes/user');
 const recipe = require('./routes/recipe');
 // const order = require('./routes/order');
-// const payment = require('./routes/payment');
+const cart = require('./routes/cart');
 const auth = require('./routes/auth');
 const db = require('./services/db');
 
@@ -27,8 +27,8 @@ app.use('/auth', auth);
 // API Endpoint for Recipe Management
 app.use('/recipe', recipe);
 
-//API Endpoint for Payment Management
-// app.use('/payment', payment);
+//API Endpoint for Cart Management
+app.use('/cart', cart);
 
 //API Endpoint for Order Management
 // app.use('/order', order);

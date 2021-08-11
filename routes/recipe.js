@@ -1,12 +1,16 @@
 const express = require('express');
 const recipeController = require('../controllers/recipeController');
 
+const auth = require('../services/auth')
+
+
+
 const router = express.Router();
-router.get('/', recipeController.getrecipes);
+router.get('/', auth.isAuthenticated, recipeController.getrecipes);
 
 router.get('/:recipe_id', recipeController.getrecipe);
 
-router.post('/', recipeController.createrecipe);
+router.post('/', auth.isAuthenticated, recipeController.createrecipe);
 
 router.put('/:recipe_id', recipeController.updaterecipes);
 

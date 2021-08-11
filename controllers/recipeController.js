@@ -1,6 +1,7 @@
 const recipe = require('../models/Recipe');
 const mongoose = require('mongoose');
 const Recipe = require('../models/Recipe');
+const Cart = require('../models/Cart')
 
 exports.getrecipe = async function (req, res, err) {
     const recipe = await Recipe.findOne({ "_id": req.params.recipe_id })
@@ -59,7 +60,7 @@ exports.createrecipe = async function (req, res, error) {
 
 exports.updaterecipes = async function (req, res, err) {
     let updated_recipe = await Recipe.findByIdAndUpdate(req.params.recipe_id,
-        req.body, {new: true})
+        req.body, { new: true })
     try {
         return res.status(200).send({
             success: true,
@@ -96,11 +97,7 @@ exports.deleterecipe = async function (req, res, err) {
             }
         )
     }
-
-    //   errors.notFound = "Product not found";
-    //   return res.status(404).json(errors);
-    // }
-    // res.status(200).json({ success: true });
-
 }
+
+
 
